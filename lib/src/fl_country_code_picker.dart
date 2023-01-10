@@ -97,6 +97,7 @@ class FlCountryCodePicker {
     double pickerMaxHeight = 500,
     bool scrollToDeviceLocale = false,
     String? initialSelectedLocale,
+    bool useRootNavigator = false,
   }) async {
     // Computations for modal height.
     final fullScreenHeight = MediaQuery.of(context).size.height;
@@ -106,6 +107,7 @@ class FlCountryCodePicker {
     // Gets the country code of the device.
     final locale = WidgetsBinding.instance.window.locale.countryCode;
     final country = showModalBottomSheet<CountryCode?>(
+      useRootNavigator: useRootNavigator,
       context: context,
       isScrollControlled: true,
       elevation: 0,
